@@ -1,84 +1,234 @@
-html{scroll-behavior:smooth}
-*{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-body{background-color:#faf8f6;color:#3b2a24;text-align:center}
-a{text-decoration:none;color:inherit}
-section,#historia{scroll-margin-top:60px}
-.main-header{display:flex;align-items:center;justify-content:space-between;padding:15px 30px;border-bottom:1px solid #e6d7d0;background-color:#fff}
-.logo{font-size:26px;font-weight:800;color:#6b1d1d;letter-spacing:1px;display:flex;align-items:center;gap:10px;margin:0 auto}
-.logo i{color:#8b322c;transition:transform .3s ease}
-.logo:hover i{transform:rotate(10deg) scale(1.1)}
-.logo-magico img{height:50px;width:auto;object-fit:contain;transition:transform .3s ease;position:absolute;right:30px}
-.logo-magico img:hover{transform:scale(1.05)}
-.category-nav{padding:12px 24px;border-bottom:1px solid #e6d7d0;overflow-x:auto;white-space:nowrap;position:sticky;top:0;background:#fff;z-index:100;box-shadow:0 4px 6px rgba(107,29,29,.03)}
-.category-nav ul{list-style:none;display:flex;justify-content:center;gap:30px;margin:0 auto}
-.category-nav a{font-size:14px;font-weight:700;padding-bottom:8px;display:inline-block;color:#6c544e;transition:all .3s ease}
-.category-nav a:hover, .category-nav a.active{color:#8b322c}
-.category-nav a.active{border-bottom:3px solid #8b322c}
-.hero-section-full{position:relative;width:100%;height:65vh;background-color:#3b2a24;overflow:hidden}
-.hero-bg{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 1.2s cubic-bezier(.25,1,.5,1)}
-.hero-section-full:hover .hero-bg{transform:scale(1.04)}
-.hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(to bottom,rgba(59,42,36,.2),rgba(92,29,29,.6));display:flex;align-items:center;justify-content:center}
-.hero-section-full h1{color:#fff;font-size:4rem;text-shadow:2px 4px 12px rgba(0,0,0,.6);text-align:center;padding:0 20px;letter-spacing:2px;animation:fadeInDown 1s ease-out;margin:0 auto}
-@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-.content{padding:40px 24px;max-width:1200px;margin:0 auto;text-align:center}
-.description-section{margin:30px auto;font-size:1.15rem;line-height:1.7;color:#5c4a43;max-width:850px;text-align:center;background:#fff;padding:25px;border-radius:12px;border-top:4px solid #8b322c;box-shadow:0 5px 15px rgba(139,50,44,.05)}
-.floating-gallery, .carousel-section, .map-section{margin:60px auto}
-h2{margin-bottom:25px;color:#4a2e25;font-size:1.8rem;text-align:center;width:100%}
-.floating-container{display:flex;gap:25px;flex-wrap:wrap;justify-content:center;margin:0 auto}
-.float-card{position:relative;width:240px;height:240px;border-radius:20px;overflow:hidden;cursor:pointer;background-color:#d1b8af;box-shadow:0 6px 15px rgba(92,29,29,.1);transition:all .4s cubic-bezier(.165,.84,.44,1)}
-.float-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.float-card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 18px 30px rgba(92,29,29,.25)}
-.float-card:hover img{transform:scale(1.12)}
-.float-text{position:absolute;bottom:-100%;left:0;width:100%;padding:20px;background:linear-gradient(transparent,rgba(74,26,26,.95));color:#fff;transition:bottom .4s ease-in-out;text-align:center}
-.float-card:hover .float-text{bottom:0}
-.float-text h3{font-size:1.2rem;margin-bottom:4px;text-align:center}
-.float-text p{font-size:.9rem;opacity:.9;text-align:center}
-.carousel-container{display:flex;gap:25px;overflow-x:auto;padding-bottom:20px;scroll-snap-type:x mandatory;scroll-behavior:smooth;justify-content:flex-start}
-.carousel-container::-webkit-scrollbar{height:8px}
-.carousel-container::-webkit-scrollbar-track{background:#f1e6e2;border-radius:4px}
-.carousel-container::-webkit-scrollbar-thumb{background:#b86e65;border-radius:4px}
-.carousel-card{min-width:290px;scroll-snap-align:start;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 12px rgba(92,29,29,.08);transition:transform .3s ease;cursor:pointer}
-.carousel-card:hover{transform:translateY(-5px)}
-.card-image{position:relative;width:100%;height:210px;overflow:hidden;background-color:#d1b8af}
-.card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.carousel-card:hover .card-image img{transform:scale(1.08)}
-.card-info{padding:16px;text-align:center}
-.card-info h3{font-size:1.15rem;margin-bottom:6px;color:#3b2a24;text-align:center}
-.category{color:#8c736a;font-size:13px;text-align:center}
-.carousel-card.photo-only{min-width:320px;height:260px;border-radius:14px;overflow:hidden;background-color:#d1b8af;cursor:pointer}
-.carousel-card.photo-only img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.carousel-card.photo-only:hover img{transform:scale(1.08)}
-.map-container{width:100%;max-width:1000px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(92,29,29,.12);border:3px solid #e6d7d0;transition:transform .3s ease}
-.map-container:hover{transform:scale(1.01)}
-.social-footer{background-color:#3b2a24;color:#f1e6e2;padding:40px 20px;text-align:center}
-.footer-content h3{font-size:1.5rem;margin-bottom:10px;color:#fff;text-align:center}
-.social-icons{margin:20px auto;display:flex;justify-content:center;gap:20px}
-.social-icons a{display:inline-flex;align-items:center;justify-content:center;width:45px;height:45px;border-radius:50%;background-color:#5c4a43;color:#fff;font-size:1.2rem;transition:all .3s ease}
-.social-icons a:hover{background-color:#8b322c;transform:translateY(-5px) scale(1.1)}
-.copy{font-size:.9rem;opacity:.7;margin-top:20px;text-align:center}
+/* RESET & BASE */
+html { scroll-behavior: smooth; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background-color: #f8f9fa; color: #333; line-height: 1.6; max-width: 100%; overflow-x: clip; }
+a { text-decoration: none; color: inherit; }
 
-/* ESTILOS DEL MODAL (VENTANA EMERGENTE) */
-.modal{display:none;position:fixed;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.85);align-items:center;justify-content:center}
-.modal.active{display:flex;animation:fadeIn .3s ease}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal-content{background-color:#fff;border-radius:12px;display:flex;flex-direction:row;max-width:850px;width:90%;overflow:hidden;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-.modal-content img{width:50%;object-fit:cover;max-height:500px}
-.modal-info-box{width:50%;padding:40px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background-color:#faf8f6}
-.modal-info-box h3{color:#6b1d1d;font-size:1.8rem;margin-bottom:15px}
-.modal-info-box p{color:#5c4a43;font-size:1.1rem;line-height:1.6}
-.close-modal{position:absolute;top:15px;right:25px;font-size:35px;font-weight:bold;cursor:pointer;color:#a3a3a3;z-index:10;transition:color .3s}
-.close-modal:hover{color:#8b322c}
+/* BARRAS DE COLORES SÓLIDOS (Pueblos Mágicos) */
+.pm-solid-stripes {
+    background: linear-gradient(90deg, 
+        #e10098 0%, #e10098 20%, 
+        #f39200 20%, #f39200 40%, 
+        #fedb00 40%, #fedb00 60%, 
+        #00a94f 60%, #00a94f 80%, 
+        #0072ce 80%, #0072ce 100%);
+}
+
+/* TOP BAR Y BOTÓN DE IDIOMA NATIVO */
+.top-bar-official { background-color: #5c1a2b; color: #fff; font-size: 0.85rem; padding: 8px 30px; display: flex; justify-content: space-between; align-items: center; }
+.top-links { display: flex; align-items: center; gap: 10px; }
+.top-links a { color: #e0e0e0; transition: color 0.3s; font-weight: 500; }
+.top-links a:hover { color: #f39200; }
+.lang-toggle { font-weight: bold; letter-spacing: 1px; }
+.active-lang { color: #fedb00 !important; }
+.sep { color: rgba(255,255,255,0.3); }
+
+/* HEADER (GLASSMORPHISM ESTÁTICO) */
+.main-header { 
+    background: rgba(255, 255, 255, 0.90); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 40px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    position: sticky; 
+    top: 0; 
+    z-index: 2000; 
+    transition: all 0.3s ease;
+}
+.header-left { display: flex; align-items: center; gap: 20px; }
+.hamburger-btn { background: none; border: none; font-size: 1.8rem; color: #5c1a2b; cursor: pointer; transition: transform 0.3s ease, color 0.3s ease; padding: 5px; }
+.hamburger-btn:hover { transform: scale(1.1); color: #f39200; }
+.logo-container { display: flex; align-items: center; gap: 15px; }
+.logo-text h2 { color: #5c1a2b; font-size: 1.6rem; letter-spacing: 2px; margin-bottom: 2px; }
+.logo-text span { color: #666; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+/* MENÚ LATERAL OCULTO (SIDEBAR) */
+.sidebar-menu { position: fixed; top: 0; left: -320px; width: 300px; height: 100vh; background: #fff; z-index: 3000; box-shadow: 5px 0 20px rgba(0,0,0,0.2); transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1); padding-top: 70px; overflow-y: auto; }
+.sidebar-menu.active { left: 0; }
+.close-btn { position: absolute; top: 20px; right: 25px; font-size: 2rem; background: none; border: none; color: #5c1a2b; cursor: pointer; transition: color 0.3s, transform 0.3s; }
+.close-btn:hover { color: #e10098; transform: rotate(90deg); }
+.sidebar-menu ul { list-style: none; padding: 0; }
+.sidebar-menu ul li { border-bottom: 1px solid #f0f0f0; }
+.sidebar-menu ul li a { display: flex; align-items: center; gap: 15px; padding: 18px 30px; font-weight: 700; color: #444; font-size: 0.95rem; transition: all 0.3s ease; }
+.sidebar-menu ul li a i { color: #5c1a2b; font-size: 1.2rem; width: 25px; text-align: center; transition: color 0.3s; }
+.sidebar-menu ul li a:hover { background-color: #f9f9f9; color: #f39200; padding-left: 35px; }
+.sidebar-menu ul li a:hover i { color: #f39200; }
+
+/* OVERLAY OSCURO PARA EL MENÚ */
+.menu-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2999; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; backdrop-filter: blur(3px); }
+.menu-overlay.active { opacity: 1; pointer-events: auto; }
+
+/* HERO SECTION (PARALLAX) */
+.hero-section { 
+    position: relative; 
+    height: 80vh; 
+    background-position: center; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; /* EFECTO PARALLAX */
+    display: flex; 
+    align-items: flex-end; 
+}
+.hero-overlay { width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%); display: flex; align-items: center; padding: 0 10%; }
+.hero-content { color: #fff; max-width: 850px; }
+.badge { background: #5c1a2b; padding: 6px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 15px; display: inline-block; }
+.hero-content h1 { font-size: 5rem; font-weight: 800; margin-bottom: 15px; text-shadow: 2px 4px 10px rgba(0,0,0,0.6); }
+.hero-content p { font-size: 1.25rem; margin-bottom: 30px; opacity: 0.95; line-height: 1.7; }
+
+/* SECCIÓN: RECONOCIMIENTOS (GALARDONES) */
+.recognitions-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 60px 5% 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.recognition-card {
+    background: #fff;
+    border: 2px solid #f0f0f0;
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.recognition-card:hover {
+    transform: translateY(-8px);
+    border-color: #fedb00; /* Borde dorado Pueblo Mágico */
+}
+.rec-icon {
+    font-size: 3rem;
+    color: #f39200; /* Naranja Institucional */
+    margin-bottom: 15px;
+}
+.recognition-card h3 {
+    font-size: 1.2rem;
+    color: #5c1a2b;
+    margin-bottom: 8px;
+}
+.recognition-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* WIDGETS POBLACION */
+.info-widgets { display: flex; gap: 20px; flex-wrap: wrap; }
+.widget { background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 12px; display: flex; align-items: center; gap: 15px; transition: transform 0.3s; }
+.widget-data { display: flex; flex-direction: column; }
+.widget-data .title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.9; }
+.widget-data .value { font-size: 1.4rem; font-weight: bold; }
+
+/* BOTONES DE ACCIÓN (PDFs) */
+.action-buttons-container { display: flex; justify-content: center; gap: 25px; padding: 40px 5%; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; }
+.action-btn { display: flex; align-items: center; gap: 12px; padding: 16px 32px; border-radius: 50px; font-size: 1.05rem; font-weight: bold; color: #fff !important; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.action-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.25); }
+.btn-magenta { background-color: #e10098; }
+.btn-orange { background-color: #f39200; }
+.btn-blue { background-color: #0072ce; }
+
+/* SECCIONES Y TEXTOS */
+.section-container { padding: 60px 5%; max-width: 1350px; margin: 0 auto; overflow: hidden; }
+.text-center { text-align: center; }
+.section-header { margin-bottom: 40px; }
+.section-header h2 { font-size: 2.5rem; color: #5c1a2b; margin-bottom: 12px; font-weight: 800; }
+.divider { height: 6px; width: 120px; margin: 0 auto; border-radius: 3px; }
+.lead-text { font-size: 1.2rem; color: #555; max-width: 900px; margin: 20px auto 40px; line-height: 1.8; }
+
+/* TARJETAS OVERLAY (Flexbox Automático para 8 elementos) */
+.innovative-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.overlay-card { position: relative; border-radius: 12px; overflow: hidden; height: 280px; width: 100%; max-width: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); cursor: pointer; background-color: #000; }
+.overlay-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, opacity 0.4s ease; }
+.overlay-card:hover img { transform: scale(1.1); opacity: 0.6; }
+.overlay-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 25px 20px; background: linear-gradient(to top, rgba(92, 26, 43, 0.95), transparent); color: #fff; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-align: left; }
+.overlay-card:hover .overlay-content { transform: translateY(0); }
+.overlay-content h3 { font-size: 1.2rem; margin-bottom: 8px; font-weight: 700; border-left: 3px solid #fedb00; padding-left: 10px; line-height: 1.2; }
+.overlay-content p { font-size: 0.9rem; opacity: 0.9; line-height: 1.4; }
+
+/* BANNER OTOMÍ (Muñeca Lele) */
+.otomi-banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 60px 0;
+    text-align: center;
+    color: #fff;
+}
+.otomi-overlay {
+    background: rgba(225, 0, 152, 0.85); /* Magenta Pueblo Mágico semi-transparente */
+    padding: 80px 20px;
+    width: 100%;
+    height: 100%;
+}
+.otomi-banner h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.otomi-banner p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* FLYERS DE EVENTOS */
+.flyer-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; }
+.flyer-card { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.4s ease; max-width: 350px; width: 100%; background: #fff; }
+.flyer-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 15px 40px rgba(0,0,0,0.25); }
+.flyer-card img { width: 100%; height: auto; display: block; margin: 0 auto; }
+
+/* MAPA */
+.map-wrapper { border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 4px solid #fff; display: flex; justify-content: center; }
+
+/* FOOTER OFICIAL */
+.official-footer { background: #2c3e50; color: #ecf0f1; padding: 60px 5% 20px; border-top: 8px solid; border-image: linear-gradient(90deg, #e10098 0%, #e10098 20%, #f39200 20%, #f39200 40%, #fedb00 40%, #fedb00 60%, #00a94f 60%, #00a94f 80%, #0072ce 80%, #0072ce 100%) 1; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 40px; }
+.footer-col h3 { font-size: 1.2rem; margin-bottom: 20px; color: #fff; position: relative; padding-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
+.footer-col p, .footer-col ul li { opacity: 0.85; font-size: 0.95rem; margin-bottom: 10px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { display: flex; align-items: center; gap: 15px; transition: opacity 0.3s; }
+.footer-col ul li:hover { opacity: 1; }
+.quick-links li a { display: flex; align-items: center; gap: 10px; transition: transform 0.3s, color 0.3s; }
+.quick-links li a:hover { color: #f39200; transform: translateX(8px); }
+.social-links { display: flex; gap: 15px; }
+.social-links a { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.3rem; transition: all 0.3s; background: rgba(255,255,255,0.15); }
+.social-links a:hover { transform: translateY(-5px); }
+.social-links .fb:hover { background: #1877F2; }
+.footer-bottom { text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; opacity: 0.6; }
+
+/* MODAL CENTRADO */
+.modal { display: none; position: fixed; z-index: 4000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.92); align-items: center; justify-content: center; }
+.modal.active { display: flex; animation: fadeIn 0.3s; }
+.modal-content { position: relative; max-width: 900px; width: 95%; display: flex; justify-content: center; }
+.modal-content img { width: 100%; height: auto; border-radius: 8px; max-height: 85vh; object-fit: contain; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.close-modal { position: absolute; top: -45px; right: 0; font-size: 40px; cursor: pointer; color: #fff; transition: color 0.3s; }
+.close-modal:hover { color: #f39200; }
+
+/* BOTÓN FLOTANTE IR ARRIBA */
+.back-to-top { position: fixed; bottom: 30px; right: 30px; background: #5c1a2b; color: #fff; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; z-index: 1500; border: none; }
+.back-to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-to-top:hover { background: #f39200; transform: translateY(-5px); }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
 /* RESPONSIVO */
-@media (max-width:768px){
-.main-header{flex-direction:column;padding:15px;gap:15px;position:relative}
-.logo-magico img{position:static;margin:0 auto}
-.hero-section-full{height:45vh}
-.hero-section-full h1{font-size:2.2rem}
-.category-nav ul{justify-content:flex-start}
-.float-card{width:100%;max-width:280px}
-.modal-content{flex-direction:column;max-height:90vh;overflow-y:auto}
-.modal-content img{width:100%;height:250px;max-height:250px}
-.modal-info-box{width:100%;padding:25px}
-.close-modal{color:#fff;text-shadow:0 2px 4px rgba(0,0,0,.8);right:15px}
+@media (max-width: 900px) {
+    .hero-content h1 { font-size: 3.5rem; }
+    .overlay-card { max-width: 100%; height: 250px; }
+}
+@media (max-width: 600px) {
+    .top-bar-official { display: none; }
+    .logo-magico { display: none; }
+    .logo-text h2 { font-size: 1.2rem; }
+    .action-btn { width: 100%; justify-content: center; }
+    .otomi-banner h2 { font-size: 2rem; }
 }
