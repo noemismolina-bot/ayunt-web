@@ -2,83 +2,90 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turismo | Ayuntamiento de Aculco</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#5c1a2b">
+    <meta name="description" content="Portal turístico de Aculco, Estado de México. Historia, gastronomía, artesanías, naturaleza, patrimonio y experiencias turísticas.">
+    <title>Turismo | H. Ayuntamiento de Aculco</title>
     <link rel="icon" type="image/png" href="logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <style>
-        .centered-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
-        .centered-grid .overlay-card { max-width: 300px; width: 100%; flex: 1 1 250px; }
-        .gastronomy-swiper { width: 100%; padding-bottom: 50px; overflow: hidden; position: relative; }
-        .gastronomy-swiper .swiper-pagination-bullet-active { background: #fedb00; }
-        .gastronomy-swiper .swiper-button-next, .gastronomy-swiper .swiper-button-prev { color: #5c1a2b; margin-top: -20px; }
-        .lang-btn { background-color: rgba(255,255,255,0.15); color: #fff !important; padding: 4px 10px; border-radius: 8px; font-weight: bold; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: all 0.3s; }
-        .lang-btn:hover { background-color: #f39200; border-color: #f39200; }
-        
-        .skiptranslate iframe { display: none !important; }
-        body { top: 0px !important; position: static !important; }
-        #google_translate_element { display: none !important; }
-        .goog-te-spinner-pos { display: none !important; }
-    </style>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="google_translate_element"></div>
+    <div id="google_translate_element" aria-hidden="true"></div>
     <div class="menu-overlay" id="menuOverlay"></div>
-    <nav class="sidebar-menu" id="sidebarMenu">
-        <button class="close-btn" id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
+    <nav class="sidebar-menu" id="sidebarMenu" aria-label="Menú principal">
+        <div class="sidebar-brand">
+            <img src="logob.jpg" alt="Escudo de Aculco">
+            <div>
+                <strong>Dirección de Turismo</strong>
+                <span>Aculco, Pueblo Mágico</span>
+            </div>
+        </div>
+        <button class="close-btn" id="closeMenu" type="button" aria-label="Cerrar menú"><i class="fa-solid fa-xmark"></i></button>
         <ul>
-            <li><a href="#inicio" class="menu-link"><i class="fa-solid fa-house"></i> INICIO</a></li>
-            <li><a href="#historia" class="menu-link"><i class="fa-solid fa-monument"></i> HISTORIA</a></li>
-            <li><a href="#centro-historico" class="menu-link"><i class="fa-solid fa-church"></i> CENTRO HISTÓRICO</a></li>
-            <li><a href="#gastronomia" class="menu-link"><i class="fa-solid fa-utensils"></i> GASTRONOMÍA</a></li>
-            <li><a href="#artesanias" class="menu-link"><i class="fa-solid fa-palette"></i> ARTESANÍAS</a></li>
-            <li><a href="#naturaleza" class="menu-link"><i class="fa-solid fa-leaf"></i> NATURALEZA</a></li>
-            <li><a href="#patrimonio-edificado" class="menu-link"><i class="fa-solid fa-building-columns"></i> PATRIMONIO EDIFICADO</a></li>
-            <li><a href="#camino-real" class="menu-link"><i class="fa-solid fa-route"></i> CAMINO REAL</a></li>
-            <li><a href="#fe-y-tradiciones" class="menu-link"><i class="fa-solid fa-masks-theater"></i> FE Y TRADICIONES</a></li>
-            <li><a href="#eventos-proximos" class="menu-link"><i class="fa-solid fa-calendar-days"></i> EVENTOS</a></li>
-            <li><a href="#ubicacion" class="menu-link"><i class="fa-solid fa-map-location-dot"></i> MAPA TURÍSTICO</a></li>
+            <li><a href="#inicio" class="menu-link"><i class="fa-solid fa-house"></i>INICIO</a></li>
+            <li><a href="#historia" class="menu-link"><i class="fa-solid fa-monument"></i>HISTORIA</a></li>
+            <li><a href="#centro-historico" class="menu-link"><i class="fa-solid fa-church"></i>CENTRO HISTÓRICO</a></li>
+            <li><a href="#gastronomia" class="menu-link"><i class="fa-solid fa-utensils"></i>GASTRONOMÍA</a></li>
+            <li><a href="#artesanias" class="menu-link"><i class="fa-solid fa-palette"></i>ARTESANÍAS</a></li>
+            <li><a href="#naturaleza" class="menu-link"><i class="fa-solid fa-leaf"></i>NATURALEZA</a></li>
+            <li><a href="#patrimonio-edificado" class="menu-link"><i class="fa-solid fa-building-columns"></i>PATRIMONIO EDIFICADO</a></li>
+            <li><a href="#camino-real" class="menu-link"><i class="fa-solid fa-route"></i>CAMINO REAL</a></li>
+            <li><a href="#fe-y-tradiciones" class="menu-link"><i class="fa-solid fa-masks-theater"></i>FE Y TRADICIONES</a></li>
+            <li><a href="#eventos-proximos" class="menu-link"><i class="fa-solid fa-calendar-days"></i>EVENTOS</a></li>
+            <li><a href="#ubicacion" class="menu-link"><i class="fa-solid fa-map-location-dot"></i>MAPA TURÍSTICO</a></li>
         </ul>
     </nav>
     <div class="top-bar-official">
-        <span><i class="fa-solid fa-landmark"></i> Gobierno Municipal de Aculco</span>
+        <div class="official-message">
+            <i class="fa-solid fa-landmark"></i>
+            <span>Gobierno Municipal de Aculco</span>
+        </div>
         <div class="top-links">
-            <a href="https://aculco.edomex.gob.mx" target="_blank">INICIO GOBIERNO</a> 
+            <a href="https://aculco.edomex.gob.mx" target="_blank" rel="noopener noreferrer">INICIO GOBIERNO</a>
             <span class="sep">|</span>
-            <a href="https://aculco.edomex.gob.mx/node/229" target="_blank">TRÁMITES Y SERVICIOS</a>
-            <span class="sep">|</span>
-            <a href="#" onclick="cambiarIdioma('es'); return false;" class="lang-btn">ES</a>
-            <a href="#" onclick="cambiarIdioma('en'); return false;" class="lang-btn">EN</a>
+            <a href="https://aculco.edomex.gob.mx/node/229" target="_blank" rel="noopener noreferrer">TRÁMITES Y SERVICIOS</a>
+            <div class="lang-switcher" aria-label="Selector de idioma">
+                <a href="#" onclick="cambiarIdioma('es'); return false;" class="lang-btn lang-es">ES</a>
+                <a href="#" onclick="cambiarIdioma('en'); return false;" class="lang-btn lang-en">EN</a>
+            </div>
         </div>
     </div>
     <header class="main-header">
         <div class="header-left">
-            <button id="openMenu" class="hamburger-btn"><i class="fa-solid fa-bars"></i></button>
-            <div class="logo-container">
-                <img src="logob.jpg" alt="Escudo Aculco" class="escudo" style="height: 60px;"> 
+            <button id="openMenu" class="hamburger-btn" type="button" aria-label="Abrir menú" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+            <a href="#inicio" class="logo-container" aria-label="Inicio">
+                <img src="logob.jpg" alt="Escudo Aculco" class="escudo">
                 <div class="logo-text">
                     <h2>DIRECCIÓN DE TURISMO</h2>
                     <span>SERVIR Y TRANSFORMAR</span>
                 </div>
-            </div>
+            </a>
         </div>
-        <div class="logo-magico">
-            <img src="logo.png" alt="Pueblo Mágico" style="height: 50px;">
+        <div class="header-right">
+            <div class="mobile-language-switcher lang-switcher">
+                <a href="#" onclick="cambiarIdioma('es'); return false;" class="lang-btn lang-es">ES</a>
+                <a href="#" onclick="cambiarIdioma('en'); return false;" class="lang-btn lang-en">EN</a>
+            </div>
+            <a href="#inicio" class="logo-magico"><img src="logo.png" alt="Pueblo Mágico"></a>
         </div>
     </header>
-    <section id="inicio" class="hero-section" style="background-image: url('portadaaa.jpg');">
+    <section id="inicio" class="hero-section">
         <div class="hero-overlay">
             <div class="hero-content">
                 <span class="badge" data-aos="fade-down">Estado de México</span>
-                <h1 data-aos="fade-up" data-aos-delay="100">Aculco</h1>
-                <p data-aos="fade-up" data-aos-delay="200">Con calles que guardan el secreto de la historia a través del tiempo y la mirada de su gente que transmite tranquilidad y misterio para explorar sus majestuosos paisajes naturales, culturales e históricos... vive una experiencia única que te llevará a un encuentro con tus raíces.</p>
-                <div class="info-widgets" data-aos="fade-up" data-aos-delay="300">
+                <h1 data-aos="fade-up">Aculco</h1>
+                <p data-aos="fade-up" data-aos-delay="100">Con calles que guardan el secreto de la historia a través del tiempo y la mirada de su gente que transmite tranquilidad y misterio para explorar sus majestuosos paisajes naturales, culturales e históricos... vive una experiencia única que te llevará a un encuentro con tus raíces.</p>
+                <a href="#descubre" class="hero-cta" data-aos="fade-up" data-aos-delay="150">Descubrir Aculco <i class="fa-solid fa-arrow-down"></i></a>
+                <div class="info-widgets" data-aos="fade-up" data-aos-delay="200">
                     <div class="widget">
-                        <div class="widget-data">
+                        <div class="widget-icon"><i class="fa-solid fa-users"></i></div>
+                        <div>
                             <span class="title">Población</span>
                             <span class="value">49,026 <small>habitantes</small></span>
                         </div>
@@ -88,107 +95,135 @@
         </div>
     </section>
     <div class="pm-colors-strip">
-        <div class="bg-magenta"></div>
-        <div class="bg-orange"></div>
-        <div class="bg-yellow"></div>
-        <div class="bg-green"></div>
-        <div class="bg-blue"></div>
+        <span class="bg-magenta"></span><span class="bg-orange"></span><span class="bg-yellow"></span><span class="bg-green"></span><span class="bg-blue"></span>
     </div>
     <section class="recognitions-container">
-        <div class="recognition-card card-magenta" data-aos="zoom-in" data-aos-delay="100">
-            <div class="rec-icon-wrapper"><i class="fa-solid fa-star rec-icon"></i></div>
+        <article class="recognition-card magenta-line">
+            <div class="rec-icon"><i class="fa-solid fa-star"></i></div>
             <h3>PUEBLO MÁGICO</h3>
             <p>NOMBRAMIENTO OFICIAL FEDERAL</p>
-        </div>
-        <div class="recognition-card card-orange" data-aos="zoom-in" data-aos-delay="200">
-            <div class="rec-icon-wrapper"><i class="fa-solid fa-landmark-dome rec-icon"></i></div>
+        </article>
+        <article class="recognition-card orange-line">
+            <div class="rec-icon"><i class="fa-solid fa-landmark-dome"></i></div>
             <h3>PATRIMONIO CULTURAL</h3>
             <p>DE LA HUMANIDAD POR LA UNESCO</p>
-        </div>
-        <div class="recognition-card card-blue" data-aos="zoom-in" data-aos-delay="300">
-            <div class="rec-icon-wrapper"><i class="fa-solid fa-route rec-icon"></i></div>
+        </article>
+        <article class="recognition-card blue-line">
+            <div class="rec-icon"><i class="fa-solid fa-route"></i></div>
             <h3>CAMINO REAL</h3>
             <p>DE TIERRA DENTRO</p>
-        </div>
+        </article>
     </section>
-    <section class="action-buttons-container">
-        <a href="HOTELES.pdf" target="_blank" class="action-btn btn-blue" data-aos="fade-up">
-            <i class="fa-solid fa-bed"></i>
-            <span>Hoteles</span>
-        </a>
-        <a href="RESTAURANTES.pdf" target="_blank" class="action-btn btn-orange" data-aos="fade-up" data-aos-delay="100">
-            <i class="fa-solid fa-utensils"></i>
-            <span>Restaurantes</span>
-        </a>
-        <a href="EXPTUR.pdf" target="_blank" class="action-btn btn-green" data-aos="fade-up" data-aos-delay="200">
-            <i class="fa-solid fa-map-location-dot"></i>
-            <span>Experiencias Turísticas</span>
-        </a>
+    <section class="action-buttons-container" id="descubre">
+        <a href="HOTELES.pdf" target="_blank" rel="noopener noreferrer" class="action-btn blue-action"><i class="fa-solid fa-bed"></i><span><strong>Hoteles</strong><small>Descubre dónde hospedarte</small></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="RESTAURANTES.pdf" target="_blank" rel="noopener noreferrer" class="action-btn orange-action"><i class="fa-solid fa-utensils"></i><span><strong>Restaurantes</strong><small>Sabores de Aculco</small></span><i class="fa-solid fa-arrow-right"></i></a>
+        <a href="EXPTUR.pdf" target="_blank" rel="noopener noreferrer" class="action-btn green-action"><i class="fa-solid fa-map-location-dot"></i><span><strong>Experiencias Turísticas</strong><small>Planea tu visita</small></span><i class="fa-solid fa-arrow-right"></i></a>
     </section>
-    <main class="content">
+    <main>
         <section id="historia" class="section-container text-center">
-            <div class="section-header" data-aos="fade-up">
+            <div class="section-header">
+                <span class="section-kicker">Conoce nuestro origen</span>
                 <h2>RESEÑA HISTÓRICA</h2>
                 <div class="divider bg-magenta"></div>
             </div>
-            <p class="lead-text" data-aos="fade-up" data-aos-delay="100">Fundado en el año 1110 por los Otomíes, Aculco ("Lugar donde tuerce el agua") es un rincón mexiquense lleno de misticismo, tradición y un legado ancestral que perdura en sus calles empedradas y en la calidez inigualable de su gente.</p>
+            <p class="lead-text">Fundado en el año 1110 por los Otomíes, Aculco ("Lugar donde tuerce el agua") es un rincón mexiquense lleno de misticismo, tradición y un legado ancestral que perdura en sus calles empedradas y en la calidez inigualable de su gente.</p>
         </section>
-        <section id="artes-mexico" class="section-container" style="background-color: #fff; border-radius: 15px; padding: 40px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 50px;">
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
-                <div style="flex: 1; min-width: 300px;" data-aos="fade-right">
-                    <h2 style="font-size: 2.2rem; color: #5c1a2b; margin-bottom: 15px; font-weight: 800; font-family: 'Playfair Display', serif;">Aculco en la revista Artes de México 1974</h2>
-                    <div class="divider bg-magenta" style="height: 6px; width: 80px; border-radius: 3px; margin-bottom: 20px;"></div>
-                    <p style="font-size: 1.15rem; color: #555; line-height: 1.8;">La revista Artes de México publicó su número doble 177 178 dedicado a los pueblos del Estado de México. Un testimonio visual invaluable de nuestra historia. Esta edición destacó a Aculco dentro de una propuesta de ruta histórica para mostrar la renovación de su imagen urbana y la mejora de servicios públicos.</p>
+        <section class="section-container feature-section" id="artes-mexico">
+            <div class="feature-grid">
+                <div>
+                    <span class="section-kicker">Memoria e identidad</span>
+                    <h2>Aculco en la revista Artes de México 1974</h2>
+                    <div class="divider bg-magenta divider-left"></div>
+                    <p>La revista Artes de México publicó su número doble 177 178 dedicado a los pueblos del Estado de México. Un testimonio visual invaluable de nuestra historia. Esta edición destacó a Aculco dentro de una propuesta de ruta histórica para mostrar la renovación de su imagen urbana y la mejora de servicios públicos.</p>
                 </div>
-                <div style="flex: 1; min-width: 300px; text-align: center;" data-aos="fade-left">
-                    <a href="https://elaculcoautentico.blogspot.com/2026/02/aculco-en-la-revista-artes-de-mexico.html" target="_blank" style="display: inline-block; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-                        <img src="revista.jpg" alt="Revista Artes de México 1974" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); cursor: pointer;">
+                <div class="feature-media">
+                    <a href="https://elaculcoautentico.blogspot.com/2026/02/aculco-en-la-revista-artes-de-mexico.html" target="_blank" rel="noopener noreferrer">
+                        <img src="revista.jpg" alt="Revista Artes de México 1974" loading="lazy">
+                        <span>Ver referencia <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
                     </a>
                 </div>
             </div>
         </section>
         <section id="centro-historico" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Arquitectura y tradición</span>
                 <h2>CENTRO HISTÓRICO</h2>
                 <div class="divider bg-orange"></div>
             </div>
-            <div class="centered-grid">
-                <div class="overlay-card" data-aos="fade-up"><img src="kiosko.jpg" alt="Centro"><div class="overlay-content"><h3>Kiosco Tradicional</h3><p>Punto de reunión dominical.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="calle.jpg" alt="Centro"><div class="overlay-content"><h3>Calles Empedradas</h3><p>Caminatas llenas de historia.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="portales.jpg" alt="Centro"><div class="overlay-content"><h3>Portales</h3><p>Arquitectura y comercio local.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="oso.jpg" alt="Oso"><div class="overlay-content"><h3>Escultura del Oso</h3><p>Monumento representativo y emblemático.</p></div></div>
+            <div class="cards-grid cards-4">
+                <article class="overlay-card accent-magenta zoomable" data-image="kiosko.jpg">
+                    <img src="kiosko.jpg" alt="Kiosco tradicional de Aculco" loading="lazy">
+                    <div><h3>Kiosco Tradicional</h3><p>Punto de reunión dominical.</p></div>
+                </article>
+                <article class="overlay-card accent-orange zoomable" data-image="calle.jpg">
+                    <img src="calle.jpg" alt="Calles empedradas de Aculco" loading="lazy">
+                    <div><h3>Calles Empedradas</h3><p>Caminatas llenas de historia.</p></div>
+                </article>
+                <article class="overlay-card accent-yellow zoomable" data-image="portales.jpg">
+                    <img src="portales.jpg" alt="Portales de Aculco" loading="lazy">
+                    <div><h3>Portales</h3><p>Arquitectura y comercio local.</p></div>
+                </article>
+                <article class="overlay-card accent-green zoomable" data-image="oso.jpg">
+                    <img src="oso.jpg" alt="Escultura del Oso de Aculco" loading="lazy">
+                    <div><h3>Escultura del Oso</h3><p>Monumento representativo y emblemático.</p></div>
+                </article>
             </div>
         </section>
         <section id="gastronomia" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Sabores que cuentan historias</span>
                 <h2>GASTRONOMÍA</h2>
                 <div class="divider bg-yellow"></div>
             </div>
-            <div class="swiper gastronomy-swiper" data-aos="zoom-in">
+            <div class="swiper gastronomy-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="queso.jpg" alt="Gastro"><div class="overlay-content"><h3>Quesos</h3><p>Nuestro máximo orgullo lácteo.</p></div></div>
+                        <article class="overlay-card accent-magenta zoomable" data-image="queso.jpg">
+                            <img src="queso.jpg" alt="Quesos de Aculco" loading="lazy">
+                            <div><h3>Quesos</h3><p>Nuestro máximo orgullo lácteo.</p></div>
+                        </article>
                     </div>
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="dulces.jpg" alt="Gastro"><div class="overlay-content"><h3>Dulces</h3><p>Jamoncillos y cajeta artesanal.</p></div></div>
+                        <article class="overlay-card accent-orange zoomable" data-image="dulces.jpg">
+                            <img src="dulces.jpg" alt="Dulces de Aculco" loading="lazy">
+                            <div><h3>Dulces</h3><p>Jamoncillos y cajeta artesanal.</p></div>
+                        </article>
                     </div>
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="pan.jpg" alt="Gastro"><div class="overlay-content"><h3>Pan Artesanal</h3><p>Receta ancestral inigualable.</p></div></div>
+                        <article class="overlay-card accent-yellow zoomable" data-image="pan.jpg">
+                            <img src="pan.jpg" alt="Pan artesanal de Aculco" loading="lazy">
+                            <div><h3>Pan Artesanal</h3><p>Receta ancestral inigualable.</p></div>
+                        </article>
                     </div>
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="escam.jpg" alt="Gastro"><div class="overlay-content"><h3>Escamoles</h3><p>Manjar prehispánico de temporada.</p></div></div>
+                        <article class="overlay-card accent-green zoomable" data-image="escam.jpg">
+                            <img src="escam.jpg" alt="Escamoles de Aculco" loading="lazy">
+                            <div><h3>Escamoles</h3><p>Manjar prehispánico de temporada.</p></div>
+                        </article>
                     </div>
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="cal.jpg" alt="Gastro"><div class="overlay-content"><h3>Caldo de vaca</h3><p>Sazón reconfortante de nuestras cocineras.</p></div></div>
+                        <article class="overlay-card accent-blue zoomable" data-image="cal.jpg">
+                            <img src="cal.jpg" alt="Caldo de vaca de Aculco" loading="lazy">
+                            <div><h3>Caldo de vaca</h3><p>Sazón reconfortante de nuestras cocineras.</p></div>
+                        </article>
                     </div>
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="barbacoa.jpg" alt="Gastro"><div class="overlay-content"><h3>Barbacoa</h3><p>Cocción lenta tradicional en maguey.</p></div></div>
+                        <article class="overlay-card accent-magenta zoomable" data-image="barbacoa.jpg">
+                            <img src="barbacoa.jpg" alt="Barbacoa tradicional de Aculco" loading="lazy">
+                            <div><h3>Barbacoa</h3><p>Cocción lenta tradicional en maguey.</p></div>
+                        </article>
                     </div>
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="pulque.jpg" alt="Gastro"><div class="overlay-content"><h3>Pulque</h3><p>La bebida de los dioses ancestral.</p></div></div>
+                        <article class="overlay-card accent-orange zoomable" data-image="pulque.jpg">
+                            <img src="pulque.jpg" alt="Pulque de Aculco" loading="lazy">
+                            <div><h3>Pulque</h3><p>La bebida de los dioses ancestral.</p></div>
+                        </article>
                     </div>
                     <div class="swiper-slide">
-                        <div class="overlay-card"><img src="licor.jpg" alt="Gastro"><div class="overlay-content"><h3>Licores Artesanales</h3><p>Acompañantes perfectos para toda ocasión.</p></div></div>
+                        <article class="overlay-card accent-yellow zoomable" data-image="licor.jpg">
+                            <img src="licor.jpg" alt="Licores artesanales de Aculco" loading="lazy">
+                            <div><h3>Licores Artesanales</h3><p>Acompañantes perfectos para toda ocasión.</p></div>
+                        </article>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -196,206 +231,205 @@
                 <div class="swiper-button-prev"></div>
             </div>
         </section>
-        <div class="otomi-banner" data-aos="fade-up" style="background-image: url(gal4.jpg);">
-            <div class="otomi-overlay">
+        <section class="otomi-banner">
+            <div>
+                <span class="section-kicker light">Cultura viva</span>
                 <h2>LEGADO Y MAGIA OTOMÍ</h2>
                 <p>Nuestra cultura ancestral vive en el vibrante color de la tradicional muñeca Lele y en las manos de nuestros artesanos, guardianes de saberes milenarios que llenan de orgullo a Aculco.</p>
             </div>
-        </div>
+        </section>
         <section id="artesanias" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Hecho por manos locales</span>
                 <h2>ARTESANÍAS</h2>
                 <div class="divider bg-green"></div>
             </div>
-            <div class="centered-grid">
-                <div class="overlay-card" data-aos="flip-left"><img src="cantera.jpg" alt="Arte"><div class="overlay-content"><h3>Talla en cantera</h3><p>Obras maestras en piedra rosa.</p></div></div>
-                <div class="overlay-card" data-aos="flip-left"><img src="textiles.jpg" alt="Arte"><div class="overlay-content"><h3>Textiles de lana</h3><p>Telares de cintura tradicionales.</p></div></div>
-                <div class="overlay-card" data-aos="flip-left"><img src="bordado.jpg" alt="Arte"><div class="overlay-content"><h3>Bordados a mano</h3><p>Iconografía de nuestra cosmovisión.</p></div></div>
-                <div class="overlay-card" data-aos="flip-left"><img src="gal3.jpg" alt="Arte"><div class="overlay-content"><h3>Muñecas lele</h3><p>Patrimonio cultural de México.</p></div></div>
+            <div class="cards-grid cards-4">
+                <article class="overlay-card accent-magenta zoomable" data-image="cantera.jpg">
+                    <img src="cantera.jpg" alt="Talla en cantera de Aculco" loading="lazy">
+                    <div><h3>Talla en cantera</h3><p>Obras maestras en piedra rosa.</p></div>
+                </article>
+                <article class="overlay-card accent-orange zoomable" data-image="textiles.jpg">
+                    <img src="textiles.jpg" alt="Textiles de lana de Aculco" loading="lazy">
+                    <div><h3>Textiles de lana</h3><p>Telares de cintura tradicionales.</p></div>
+                </article>
+                <article class="overlay-card accent-yellow zoomable" data-image="bordado.jpg">
+                    <img src="bordado.jpg" alt="Bordados a mano de Aculco" loading="lazy">
+                    <div><h3>Bordados a mano</h3><p>Iconografía de nuestra cosmovisión.</p></div>
+                </article>
+                <article class="overlay-card accent-blue zoomable" data-image="gal3.jpg">
+                    <img src="gal3.jpg" alt="Muñecas Lele" loading="lazy">
+                    <div><h3>Muñecas lele</h3><p>Patrimonio cultural de México.</p></div>
+                </article>
             </div>
         </section>
         <section id="naturaleza" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Paisajes para descubrir</span>
                 <h2>NATURALEZA</h2>
                 <div class="divider bg-blue"></div>
             </div>
-            <div class="centered-grid">
-                <div class="overlay-card" data-aos="fade-up"><img src="casa1.jpg" alt="Nat"><div class="overlay-content"><h3>Cascada La Concepción</h3><p>Rodeada de prismas basálticos.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="presahua.jpg" alt="Nat"><div class="overlay-content"><h3>Presa del Hupango</h3><p>Cuerpo de agua emblemático.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="ctix.jpg" alt="Nat"><div class="overlay-content"><h3>Cascada Tixhiñú</h3><p>Paisaje natural impresionante.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="nado1.jpg" alt="Nat"><div class="overlay-content"><h3>Cerro del Ñadó</h3><p>Desafío para el alpinismo.</p></div></div>
+            <div class="cards-grid cards-4">
+                <article class="overlay-card accent-magenta zoomable" data-image="casa1.jpg">
+                    <img src="casa1.jpg" alt="Cascada La Concepción" loading="lazy">
+                    <div><h3>Cascada La Concepción</h3><p>Rodeada de prismas basálticos.</p></div>
+                </article>
+                <article class="overlay-card accent-orange zoomable" data-image="presahua.jpg">
+                    <img src="presahua.jpg" alt="Presa del Hupango" loading="lazy">
+                    <div><h3>Presa del Hupango</h3><p>Cuerpo de agua emblemático.</p></div>
+                </article>
+                <article class="overlay-card accent-green zoomable" data-image="ctix.jpg">
+                    <img src="ctix.jpg" alt="Cascada Tixhiñú" loading="lazy">
+                    <div><h3>Cascada Tixhiñú</h3><p>Paisaje natural impresionante.</p></div>
+                </article>
+                <article class="overlay-card accent-blue zoomable" data-image="nado1.jpg">
+                    <img src="nado1.jpg" alt="Cerro del Ñadó" loading="lazy">
+                    <div><h3>Cerro del Ñadó</h3><p>Desafío para el alpinismo.</p></div>
+                </article>
             </div>
         </section>
         <section id="patrimonio-edificado" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Memoria construida</span>
                 <h2>PATRIMONIO EDIFICADO</h2>
                 <div class="divider bg-magenta"></div>
-                <p class="lead-text">Obras históricas de ingeniería e infraestructura civil que narran el desarrollo de nuestra comunidad.</p>
+                <p class="lead-text compact">Obras que narran el desarrollo de nuestra comunidad.</p>
             </div>
-            <div class="centered-grid">
-                <div class="overlay-card" data-aos="zoom-in"><img src="lav1.jpg" alt="Patrimonio"><div class="overlay-content"><h3>Lavaderos públicos</h3><p>Testigos de leyendas vivas.</p></div></div>
-                <div class="overlay-card" data-aos="zoom-in"><img src="reloj.jpg" alt="Patrimonio"><div class="overlay-content"><h3>Reloj de sol</h3><p>Antiguo instrumento de cantera.</p></div></div>
+            <div class="cards-grid cards-2">
+                <article class="overlay-card accent-orange zoomable" data-image="lav1.jpg">
+                    <img src="lav1.jpg" alt="Lavaderos públicos de Aculco" loading="lazy">
+                    <div><h3>Lavaderos públicos</h3><p>Testigos de leyendas vivas.</p></div>
+                </article>
+                <article class="overlay-card accent-blue zoomable" data-image="reloj.jpg">
+                    <img src="reloj.jpg" alt="Reloj de sol de Aculco" loading="lazy">
+                    <div><h3>Reloj de sol</h3><p>Antiguo instrumento de cantera.</p></div>
+                </article>
             </div>
         </section>
         <section id="fe-y-tradiciones" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Tradiciones que permanecen</span>
                 <h2>FE Y TRADICIONES</h2>
                 <div class="divider bg-yellow"></div>
-                <p class="lead-text">Nuestros santuarios históricos cobran vida a través de las vibrantes fiestas patronales que nos dan identidad.</p>
+                <p class="lead-text compact">Nuestros santuarios históricos cobran vida a través de las vibrantes fiestas patronales que nos dan identidad.</p>
             </div>
-            <div class="centered-grid">
-                <div class="overlay-card" data-aos="fade-up"><img src="sanjer.jpg" alt="Fe"><div class="overlay-content"><h3>Parroquia San Jerónimo</h3><p>Joya del siglo XVI, sede de nuestro festejo mayor.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="nent1.jpg" alt="Fe"><div class="overlay-content"><h3>Santuario Señor Nenthé</h3><p>Recinto que protege nuestras aguas y devoción.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="santaro.jpg" alt="Fe"><div class="overlay-content"><h3>El Azafrán</h3><p>Tradición viva llena de fe, música y color.</p></div></div>
+            <div class="cards-grid cards-3">
+                <article class="overlay-card accent-magenta zoomable" data-image="sanjer.jpg">
+                    <img src="sanjer.jpg" alt="Parroquia San Jerónimo" loading="lazy">
+                    <div><h3>Parroquia San Jerónimo</h3><p>Joya del siglo XVI, sede de nuestro festejo mayor.</p></div>
+                </article>
+                <article class="overlay-card accent-orange zoomable" data-image="nent1.jpg">
+                    <img src="nent1.jpg" alt="Santuario Señor Nenthé" loading="lazy">
+                    <div><h3>Santuario Señor Nenthé</h3><p>Recinto que protege nuestras aguas y devoción.</p></div>
+                </article>
+                <article class="overlay-card accent-blue zoomable" data-image="santaro.jpg">
+                    <img src="santaro.jpg" alt="El Azafrán, Aculco" loading="lazy">
+                    <div><h3>El Azafrán</h3><p>Tradición viva llena de fe, música y color.</p></div>
+                </article>
             </div>
         </section>
         <section id="camino-real" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Historia en el camino</span>
                 <h2>CAMINO REAL DE TIERRA ADENTRO</h2>
                 <div class="divider bg-orange"></div>
             </div>
-            <div class="centered-grid">
-                <div class="overlay-card" data-aos="fade-up"><img src="camre.jpg" alt="Camino"><div class="overlay-content"><h3>Parajes Históricos</h3><p>Descanso de antiguos viajeros.</p></div></div>
-                <div class="overlay-card" data-aos="fade-up"><img src="camre2.jpg" alt="Camino"><div class="overlay-content"><h3>Puentes de Piedra</h3><p>Infraestructura del siglo XVIII.</p></div></div>
+            <div class="cards-grid cards-2">
+                <article class="overlay-card accent-yellow zoomable" data-image="camre.jpg">
+                    <img src="camre.jpg" alt="Parajes históricos del Camino Real" loading="lazy">
+                    <div><h3>Parajes Históricos</h3><p>Descanso de antiguos viajeros.</p></div>
+                </article>
+                <article class="overlay-card accent-green zoomable" data-image="camre2.jpg">
+                    <img src="camre2.jpg" alt="Puentes de piedra del Camino Real" loading="lazy">
+                    <div><h3>Puentes de Piedra</h3><p>Infraestructura del siglo XVIII.</p></div>
+                </article>
             </div>
         </section>
         <section id="eventos-proximos" class="section-container">
-            <div class="section-header text-center" data-aos="fade-up">
+            <div class="section-header text-center">
+                <span class="section-kicker">Agenda turística</span>
                 <h2>PRÓXIMOS EVENTOS</h2>
                 <div class="divider bg-blue"></div>
             </div>
-            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;" data-aos="fade-up">
-                <div class="overlay-card" style="max-width: 350px; width: 100%; height: auto; aspect-ratio: 3/4;">
-                    <img src="fly1.jpg" alt="Flyer Evento 1">
-                </div>
-                <div class="overlay-card" style="max-width: 350px; width: 100%; height: auto; aspect-ratio: 3/4;">
-                    <img src="fly2.jpg" alt="Flyer Evento 2">
-                </div>
+            <div class="events-grid">
+                <article class="event-card zoomable" data-image="fly1.jpg"><img src="fly1.jpg" alt="Flyer evento 1" loading="lazy"></article>
+                <article class="event-card zoomable" data-image="fly2.jpg"><img src="fly2.jpg" alt="Flyer evento 2" loading="lazy"></article>
             </div>
         </section>
-        <section id="ubicacion" class="section-container" data-aos="zoom-in">
+        <section id="ubicacion" class="section-container">
             <div class="section-header text-center">
+                <span class="section-kicker">Planea tu recorrido</span>
                 <h2>MAPA TURÍSTICO</h2>
                 <div class="divider bg-green"></div>
-                <p class="lead-text">Toca cualquiera de los marcadores para descubrir tesoros ocultos de Aculco y saber cómo llegar.</p>
+                <p class="lead-text compact">Toca cualquiera de los marcadores para descubrir tesoros ocultos de Aculco y saber cómo llegar.</p>
             </div>
-            <div style="border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 12px; overflow: hidden; height: 600px; position: relative;">
-                <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1P9TwQlqpURv5ipiVVyvWceCtHd80gEk&ehbc=2E312F" width="100%" height="100%" style="border:0; position: absolute; top:0; left:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+            <div class="map-container">
+<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1P9TwQlqpURv5ipiVVyvWceCtHd80gEk&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>            </div>
         </section>
     </main>
-    <div id="imageModal" class="modal">
+    <div class="modal" id="imageModal" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <button class="close-modal" id="closeModal" type="button" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
             <img id="modalImg" src="" alt="Vista ampliada">
         </div>
     </div>
     <div class="pm-colors-strip">
-        <div class="bg-magenta"></div>
-        <div class="bg-orange"></div>
-        <div class="bg-yellow"></div>
-        <div class="bg-green"></div>
-        <div class="bg-blue"></div>
-    </div>  
+        <span class="bg-magenta"></span><span class="bg-orange"></span><span class="bg-yellow"></span><span class="bg-green"></span><span class="bg-blue"></span>
+    </div>
     <footer class="official-footer">
         <div class="footer-grid">
-            <div class="footer-col" data-aos="fade-up" data-aos-delay="100">
-                <h3>H. Ayuntamiento de Aculco</h3>
-                <p>Dirección de Turismo</p>
-                <div class="bg-yellow" style="height: 4px; width: 60%; margin-top:15px; border-radius:2px;"></div>
+            <div>
+                <div class="footer-brand">
+                    <img src="logob.jpg" alt="Escudo Aculco">
+                    <div>
+                        <h3>H. Ayuntamiento de Aculco</h3>
+                        <p>Dirección de Turismo</p>
+                    </div>
+                </div>
+                <div class="footer-color-line">
+                    <span class="bg-magenta"></span><span class="bg-orange"></span><span class="bg-yellow"></span><span class="bg-green"></span><span class="bg-blue"></span>
+                </div>
             </div>
-            <div class="footer-col" data-aos="fade-up" data-aos-delay="200">
+            <div>
                 <h3>Enlaces Rápidos</h3>
-                <ul class="quick-links">
-                    <li><a href="https://aculco.edomex.gob.mx" target="_blank"><i class="fa-solid fa-chevron-right"></i>Inicio Oficial</a></li>
-                    <li><a href="https://aculco.edomex.gob.mx/node/202" target="_blank"><i class="fa-solid fa-chevron-right"></i>Gobierno Municipal</a></li>
-                    <li><a href="https://aculco.edomex.gob.mx/transparencia" target="_blank"><i class="fa-solid fa-chevron-right"></i>Transparencia</a></li>
+                <ul>
+                    <li><a href="https://aculco.edomex.gob.mx" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chevron-right"></i> Inicio Oficial</a></li>
+                    <li><a href="https://aculco.edomex.gob.mx/node/202" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chevron-right"></i> Gobierno Municipal</a></li>
+                    <li><a href="https://aculco.edomex.gob.mx/transparencia" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-chevron-right"></i> Transparencia</a></li>
                 </ul>
             </div>
-            <div class="footer-col" data-aos="fade-up" data-aos-delay="300">
+            <div>
                 <h3>Contacto</h3>
                 <ul>
-                    <li><i class="fa-solid fa-location-dot"></i>Plaza de la Constitución No. 1, Aculco, Méx.</li>
-                    <li><i class="fa-solid fa-phone"></i> 718 124 0001 </li>
-                    <li><a href="mailto:turismoaculco2527@gmail.com"><i class="fa-solid fa-envelope"></i> turismoaculco2527@gmail.com</a></li>
+                    <li><i class="fa-solid fa-location-dot"></i><span>Plaza de la Constitución No. 1, Aculco, Méx.</span></li>
+                    <li><i class="fa-solid fa-phone"></i><span>718 124 0001</span></li>
+                    <li><a href="mailto:turismoaculco2527@gmail.com"><i class="fa-solid fa-envelope"></i><span>turismoaculco2527@gmail.com</span></a></li>
                 </ul>
             </div>
-            <div class="footer-col" data-aos="fade-up" data-aos-delay="400">
+            <div>
                 <h3>REDES SOCIALES</h3>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/profile.php?id=61579243917819" target="_blank" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" target="_blank" class="ig"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61579243917819" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 H. Ayuntamiento de Aculco. Todos los derechos reservados.</p>
-        </div>
+        <div class="footer-bottom">© 2026 H. Ayuntamiento de Aculco. Todos los derechos reservados.</div>
     </footer>
-    <button class="back-to-top" id="backToTop"><i class="fa-solid fa-chevron-up"></i></button>
-    
-    <script type="text/javascript">
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Volver al inicio"><i class="fa-solid fa-chevron-up"></i></button>
+    <script>
         function cambiarIdioma(lang) {
             document.cookie = "googtrans=/es/" + lang + "; path=/;";
             document.cookie = "googtrans=/es/" + lang + "; domain=" + window.location.hostname + "; path=/;";
             window.location.reload();
         }
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'es', autoDisplay: false}, 'google_translate_element');
+            new google.translate.TranslateElement({ pageLanguage: "es", autoDisplay: false }, "google_translate_element");
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            AOS.init({ duration: 800, once: true, offset: 100 });
-            const openMenu = document.getElementById('openMenu');
-            const closeMenu = document.getElementById('closeMenu');
-            const sidebarMenu = document.getElementById('sidebarMenu');
-            const menuOverlay = document.getElementById('menuOverlay');
-            const menuLinks = document.querySelectorAll('.menu-link');      
-            function toggleMenu() {
-                sidebarMenu.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-            }
-            openMenu.addEventListener('click', toggleMenu);
-            closeMenu.addEventListener('click', toggleMenu);
-            menuOverlay.addEventListener('click', toggleMenu);
-            menuLinks.forEach(link => link.addEventListener('click', toggleMenu));
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImg');
-            const closeModal = document.querySelector('.close-modal');
-            document.querySelectorAll('div.overlay-card:not(a.overlay-card) img').forEach(img => {
-                img.addEventListener('click', (e) => {
-                    modalImg.src = e.target.src;
-                    modal.classList.add('active');
-                });
-            });
-            closeModal.addEventListener('click', () => modal.classList.remove('active'));
-            window.addEventListener('click', (e) => {
-                if(e.target === modal) modal.classList.remove('active');
-            });
-            const backToTopBtn = document.getElementById('backToTop');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 400) {
-                    backToTopBtn.classList.add('show');
-                } else {
-                    backToTopBtn.classList.remove('show');
-                }
-            });
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            new Swiper('.gastronomy-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                pagination: { el: '.swiper-pagination', clickable: true },
-                navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-                breakpoints: { 600: { slidesPerView: 2 }, 900: { slidesPerView: 3 }, 1200: { slidesPerView: 4 } }
-            });
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>
