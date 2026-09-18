@@ -50,9 +50,14 @@
             <a href="https://aculco.edomex.gob.mx" target="_blank" rel="noopener noreferrer">INICIO GOBIERNO</a>
             <span class="sep">|</span>
             <a href="https://aculco.edomex.gob.mx/node/229" target="_blank" rel="noopener noreferrer">TRÁMITES Y SERVICIOS</a>
-            <div class="lang-switcher" aria-label="Selector de idioma">
-                <a href="#" onclick="cambiarIdioma('es'); return false;" class="lang-btn lang-es">ES</a>
-                <a href="#" onclick="cambiarIdioma('en'); return false;" class="lang-btn lang-en">EN</a>
+            <div class="lang-dropdown" aria-label="Selector de idioma">
+                <button class="lang-icon-btn" aria-label="Traducir"><i class="fa-solid fa-globe"></i></button>
+                <div class="lang-menu">
+                    <a href="#" onclick="cambiarIdioma('es'); return false;">Español</a>
+                    <a href="#" onclick="cambiarIdioma('en'); return false;">English</a>
+                    <a href="#" onclick="cambiarIdioma('fr'); return false;">Français</a>
+                    <a href="#" onclick="cambiarIdioma('ko'); return false;">한국어</a>
+                </div>
             </div>
         </div>
     </div>
@@ -68,9 +73,14 @@
             </a>
         </div>
         <div class="header-right">
-            <div class="mobile-language-switcher lang-switcher">
-                <a href="#" onclick="cambiarIdioma('es'); return false;" class="lang-btn lang-es">ES</a>
-                <a href="#" onclick="cambiarIdioma('en'); return false;" class="lang-btn lang-en">EN</a>
+            <div class="lang-dropdown mobile-lang-dropdown" aria-label="Selector de idioma">
+                <button class="lang-icon-btn black-icon" aria-label="Traducir"><i class="fa-solid fa-globe"></i></button>
+                <div class="lang-menu">
+                    <a href="#" onclick="cambiarIdioma('es'); return false;">Español</a>
+                    <a href="#" onclick="cambiarIdioma('en'); return false;">English</a>
+                    <a href="#" onclick="cambiarIdioma('fr'); return false;">Français</a>
+                    <a href="#" onclick="cambiarIdioma('ko'); return false;">한국어</a>
+                </div>
             </div>
             <a href="#inicio" class="logo-magico"><img src="logo.png" alt="Pueblo Mágico"></a>
         </div>
@@ -364,7 +374,8 @@
                 <p class="lead-text compact">Toca cualquiera de los marcadores para descubrir tesoros ocultos de Aculco y saber cómo llegar.</p>
             </div>
             <div class="map-container">
-<iframe src="https://www.google.com/maps/d/u/1/embed?mid=1P9TwQlqpURv5ipiVVyvWceCtHd80gEk&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>            </div>
+                <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1P9TwQlqpURv5ipiVVyvWceCtHd80gEk&ehbc=2E312F&noprof=1" title="Mapa turístico de Aculco" loading="lazy" allowfullscreen></iframe>
+            </div>
         </section>
     </main>
     <div class="modal" id="imageModal" aria-hidden="true">
